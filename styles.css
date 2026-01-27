@@ -986,3 +986,83 @@ min-height: 100vh;
     .rsvp-card-official { padding: 30px 20px; }
     .rsvp-title { font-size: 2rem; }
 }
+
+
+/* =========================================
+   CORRECCIONES EXCLUSIVAS PARA MÓVIL
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* --- 1. ARREGLO IMÁGENES HERO (Evita el zoom excesivo) --- */
+    .slide {
+        /* Desactivamos el efecto parallax fijo porque rompe en móviles */
+        background-attachment: scroll !important;
+        
+        /* Ajustamos la posición para que se vean las caras */
+        background-position: center top !important; 
+        
+        /* Aseguramos que cubra la pantalla sin estirarse raro */
+        background-size: cover !important;
+    }
+
+    /* Ajuste de textos del Hero para que no se salgan */
+    .hero-content {
+        padding-top: 80px; /* Espacio para que no choque con el tope */
+        width: 90%;
+    }
+    
+    .main-title {
+        font-size: 2.5rem; /* Letra más pequeña para que quepa */
+        letter-spacing: 2px;
+    }
+    
+    .couple-names, .couple-script {
+        font-size: 2.8rem; /* Nombres más pequeños */
+    }
+
+    /* --- 2. MEJORA SECCIÓN NUESTRA HISTORIA --- */
+    /* Damos más aire y estructura vertical */
+    
+    .timeline-story {
+        padding: 60px 20px;
+    }
+
+    .timeline-item, .timeline-item.reverse {
+        flex-direction: column; /* Apilar foto y texto */
+        gap: 0; /* Quitamos gap del flex porque usaremos margenes */
+        margin-bottom: 60px; /* Separación generosa entre historias */
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra suave para agrupar */
+        overflow: hidden; /* Para que la imagen respete el borde */
+    }
+
+    /* Imagen de historia más contenida */
+    .timeline-img img {
+        height: 250px; /* Altura fija para uniformidad */
+        width: 100%;
+        border-radius: 8px 8px 0 0; /* Solo bordes de arriba */
+        box-shadow: none; /* Quitamos sombra interna, usamos la del contenedor */
+    }
+
+    /* Caja de texto de historia */
+    .timeline-content, .timeline-item.reverse .timeline-content {
+        text-align: center;
+        padding: 30px 20px;
+        background-color: var(--white); /* Fondo blanco limpio */
+    }
+
+    /* Título de cada historia */
+    .timeline-content h3 {
+        font-size: 1.5rem;
+        margin-top: 5px;
+    }
+
+    /* La cajita destacada (El Gran Paso) */
+    .timeline-content.highlight-box {
+        background-color: var(--palm-green);
+        color: var(--white);
+        border-radius: 0 0 8px 8px;
+    }
+}
