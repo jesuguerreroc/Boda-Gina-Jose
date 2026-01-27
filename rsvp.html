@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva tu Estadía | Ginna & José Guillermo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="rsvp-page-body">
+
+    <div class="video-background-fixed">
+        <video autoplay muted loop playsinline poster="img/WhatsApp Image 2026-01-27 at 3.05.20 PM (2).jpeg">
+            <source src="img/video-hotel.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-overlay-fixed dark"></div> <a href="index.html" class="back-home-btn">
+        <i class="fas fa-arrow-left"></i> Volver al Inicio
+    </a>
+
+    <div class="rsvp-container reveal">
+        <div class="rsvp-card-official">
+            
+            <h1 class="rsvp-title">Reserva Tu Estadía</h1>
+            <div class="divider"></div>
+            
+            <p class="rsvp-intro">
+                Queremos que tu experiencia en Punta Cana sea tan especial como nuestro “sí”.
+            </p>
+
+            <div class="policy-box">
+                <i class="fas fa-info-circle"></i>
+                <p>
+                    Para garantizar la mejor experiencia durante nuestra boda, <strong>todos los invitados deberán realizar su reserva exclusivamente a través de la agencia oficial del evento.</strong>
+                </p>
+                <p class="policy-small">
+                    El hotel Hard Rock Punta Cana exige que todos los asistentes estén registrados dentro del grupo de la boda. Las reservas efectuadas por fuera de la agencia o en otros canales estarán sujetas a cargos adicionales según las políticas del hotel.
+                </p>
+            </div>
+
+            <p class="rsvp-thanks">Gracias por ayudarnos a hacer de este viaje una celebración perfecta.</p>
+
+            <div class="agency-section">
+                <p class="contact-label">Gestiona tu reserva con:</p>
+                
+                <img src="img/logo-viaja.png" alt="Viaja VIP Logo" class="agency-logo">
+
+                <div class="contact-details">
+                    <h3>Alejandra Urrego</h3>
+                    
+                    <a href="https://wa.me/573175886966" target="_blank" class="contact-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i> +57 317 5886966
+                    </a>
+                    
+                    <a href="mailto:andres@viajavip.co" class="contact-btn email">
+                        <i class="far fa-envelope"></i> andres@viajavip.co
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelector('.rsvp-container').classList.add('active');
+            }, 300);
+        });
+    </script>
+</body>
+</html>
