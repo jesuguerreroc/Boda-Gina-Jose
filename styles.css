@@ -1021,48 +1021,32 @@ min-height: 100vh;
         font-size: 2.8rem; /* Nombres más pequeños */
     }
 
-    /* --- 2. MEJORA SECCIÓN NUESTRA HISTORIA --- */
-    /* Damos más aire y estructura vertical */
+/* --- 3. DISEÑO HISTORIA (Tipo Tarjetas) --- */
+    .timeline-story { padding-bottom: 80px; } /* Espacio extra al final */
     
-    .timeline-story {
-        padding: 60px 20px;
-    }
-
     .timeline-item, .timeline-item.reverse {
-        flex-direction: column; /* Apilar foto y texto */
-        gap: 0; /* Quitamos gap del flex porque usaremos margenes */
-        margin-bottom: 60px; /* Separación generosa entre historias */
+        flex-direction: column !important; /* Foto arriba, texto abajo */
+        margin-bottom: 50px;
         background: #fff;
         border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra suave para agrupar */
-        overflow: hidden; /* Para que la imagen respete el borde */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        overflow: hidden;
     }
 
-    /* Imagen de historia más contenida */
     .timeline-img img {
-        height: 250px; /* Altura fija para uniformidad */
+        height: 250px;
         width: 100%;
-        border-radius: 8px 8px 0 0; /* Solo bordes de arriba */
-        box-shadow: none; /* Quitamos sombra interna, usamos la del contenedor */
+        object-fit: cover;
     }
 
-    /* Caja de texto de historia */
     .timeline-content, .timeline-item.reverse .timeline-content {
-        text-align: center;
+        text-align: center !important;
         padding: 30px 20px;
-        background-color: var(--white); /* Fondo blanco limpio */
     }
 
-    /* Título de cada historia */
-    .timeline-content h3 {
-        font-size: 1.5rem;
-        margin-top: 5px;
+    /* Ocultar elementos decorativos de PC */
+    .timeline-line, .timeline-marker, 
+    .timeline-content.right::before, .timeline-content.left::before {
+        display: none !important;
     }
-
-    /* La cajita destacada (El Gran Paso) */
-    .timeline-content.highlight-box {
-        background-color: var(--palm-green);
-        color: var(--white);
-        border-radius: 0 0 8px 8px;
-    }
-}
+     }
