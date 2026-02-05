@@ -1,12 +1,13 @@
-/* --- VARIABLES & RESET --- */
+/* --- VARIABLES & RESET (ACTUALIZADO) --- */
 :root {
-    --sand: #f4f1ea;
-    --sand-dark: #e6e2d8;
-    --palm-green: #4a6c5a;
+    /* NUEVOS COLORES */
+    --sand: #F8F4E7;      /* Nuevo color de fondo principal (Crema cálido) */
+    --sand-dark: #e6e2d8; /* Se mantiene para contrastes sutiles */
+    --palm-green: #3e5c4c; /* Un verde un poco más profundo y elegante */
     --ocean-blue: #7ca5b8;
-    --gold: #d4af37;
+    --gold: #D0A63F;      /* Nuevo tono dorado solicitado */
     --text-dark: #2c3e50;
-    --white: #ffffff;
+    --white: #ffffff;     /* Mantenemos blanco puro solo para tarjetas internas */
     
     --font-title: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
@@ -441,13 +442,18 @@ img { width: 100%; display: block; }
 .section { padding: 80px 20px; position: relative; }
 .container { max-width: 1000px; margin: 0 auto; }
 .section-title {
-    font-size: 2.5rem;
+    font-family: var(--font-title);
+    font-weight: 600; /* Más peso */
+    font-style: italic; /* Cursiva para elegancia */
+    font-size: 3rem; /* Más grandes */
     text-align: center;
-    color: var(--palm-green);
+    color: var(--gold); /* Ahora los títulos de sección son dorados */
     margin-bottom: 20px;
 }
+
+/* Aseguramos que el divisor use el nuevo dorado */
 .divider {
-    width: 60px; height: 2px; background: var(--gold);
+    width: 60px; height: 3px; background: var(--gold);
     margin: 0 auto 40px;
 }
 
@@ -1050,3 +1056,96 @@ min-height: 100vh;
         display: none !important;
     }
      }
+     
+/* =========================================
+   AJUSTE DE TÍTULOS SOLO PARA MÓVIL
+   ========================================= */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem !important; /* Reduce el tamaño a algo más manejable en pantallas pequeñas */
+        margin-bottom: 15px; /* Reduce un poco el espacio debajo */
+        line-height: 1.2; /* Mejora la lectura si el título ocupa dos líneas */
+    }
+
+    .divider {
+        margin: 0 auto 30px; /* Reduce la separación con el contenido siguiente */
+        width: 40px; /* Hacemos la línea un poco más corta para que sea proporcional */
+    }
+}
+
+/* =========================================
+   REDISEÑO DE FONDOS (PALETA CÁLIDA)
+   ========================================= */
+
+/* 1. SECCIÓN HISTORIA
+   Antes era blanca. Ahora la ponemos color "Arena" (sand).
+   Como las tarjetas de la historia (.timeline-item) son blancas, 
+   ahora se notará mucho mejor el contorno de cada tarjeta. */
+.timeline-story {
+    background-color: var(--sand);
+}
+
+/* 2. SECCIÓN ITINERARIO
+   Le daremos un tono un poco más oscuro (sand-dark) para diferenciarla
+   de la sección anterior. Las tarjetas de eventos seguirán siendo blancas,
+   creando un contraste muy bonito. */
+.itinerary-section {
+    background-color: var(--sand-dark);
+}
+
+/* 3. SECCIÓN DRESS CODE
+   Volvemos al tono "Arena" suave para mantener la elegancia y que
+   los textos oscuros se lean perfectamente. */
+.dresscode-section {
+    background-color: var(--sand);
+}
+
+/* 4. SECCIÓN GALERÍA
+   Usaremos el tono oscuro de nuevo. Esto hace que las fotos (que suelen tener
+   muchos colores) se vean más enmarcadas y organizadas. */
+.gallery-section {
+    background-color: var(--sand-dark);
+    padding-bottom: 80px; /* Un poco de aire extra al final */
+}
+
+/* 5. SECCIÓN RSVP TEASER (La llamada a la acción final)
+   Para esta última sección antes del footer, usaremos el color BLANCO.
+   ¿Por qué? Porque limpia la vista antes del final y hace que el botón
+   dorado destaque al máximo. */
+.rsvp-teaser {
+    background-color: var(--white) !important; /* El !important sobrescribe el estilo en línea */
+}
+
+/* =========================================
+   DISEÑO FINAL: FOTO LIBRE + TARJETA DE TEXTO
+   ========================================= */
+
+/* 1. Quitamos el fondo y la caja al contenedor general */
+.timeline-item {
+    background: transparent !important; /* Fondo transparente */
+    box-shadow: none !important;        /* Quitamos la sombra general */
+    border: none !important;            /* Quitamos el borde general */
+    padding: 0 !important;              /* Quitamos espacios internos extra */
+}
+
+/* 2. Estilo para la FOTO (Se queda "suelta" pero bonita) */
+.timeline-img img {
+    border-radius: 10px;               /* Bordes redondeados en la foto */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra propia para que resalte */
+    margin-bottom: 15px;               /* Un pequeño espacio antes del texto */
+    display: block;
+}
+
+/* 3. Estilo para el TEXTO (Aquí es donde va la tarjeta blanca) */
+.timeline-content {
+    background-color: var(--white);    /* Fondo BLANCO solo aquí */
+    padding: 30px;                     /* Espacio interno para que el texto respire */
+    border-radius: 8px;                /* Bordes de la tarjeta de texto */
+    
+    /* Sombra y borde para darle el efecto de tarjeta */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; 
+    border: 1px solid rgba(0,0,0,0.05);
+    
+    /* Centramos el texto si no lo estaba */
+    text-align: center; 
+}
