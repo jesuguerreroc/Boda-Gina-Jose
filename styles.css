@@ -1149,3 +1149,96 @@ min-height: 100vh;
     /* Centramos el texto si no lo estaba */
     text-align: center; 
 }
+
+/* =========================================
+   NUEVA SECCIÓN: COMPARTIR FOTOS
+   ========================================= */
+
+.share-section {
+    background-color: var(--sand); /* Mantenemos la paleta cálida */
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.share-intro {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: var(--text-dark);
+}
+
+/* Rejilla de iconitos (Pasos) */
+.steps-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--palm-green); /* Usamos el verde de la paleta para los iconos */
+}
+
+.step-item i {
+    font-size: 2rem;
+    background: rgba(255,255,255,0.5);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--gold); /* Un toque dorado sutil */
+}
+
+.step-item span {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Botón Especial de Google Photos */
+.google-photos-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--gold); /* Fondo Dorado */
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(208, 166, 63, 0.4);
+}
+
+.google-photos-btn:hover {
+    transform: translateY(-3px);
+    background-color: #b88e2f; /* Un dorado un poco más oscuro al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(208, 166, 63, 0.6);
+}
+
+.small-note {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .steps-grid {
+        gap: 20px;
+    }
+    .step-item i {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
